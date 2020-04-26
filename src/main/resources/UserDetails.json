@@ -1,0 +1,25 @@
+{
+	"user_details": [
+		{
+			"userID" : "TlMyMDIwMDE=",
+			"name":"Q2hpbm1heSBLdWxrYXJuaQ==",
+			"email":"Y2hpbm1heS5rdWxrYXJuaTE2QHZpdC5lZHU=",
+			"mobile":"NzUwNjA5Nzg4OA==",
+			"dob":"MjgtMTItMTk5OA=="
+		},
+		{
+			"userID" : "TlMyMDIwMDI=",
+			"name":"Monica Kawade",
+			"email":"monica.kawade16@vit.edu",
+			"mobile":"9552506742",
+			"dob":"23-03-1998"
+		},
+		{
+			"userID" : "TlMyMDIwMDM=",
+			"name":"Juilee Katpatal",
+			"email":"juilee.katpatal16@vit.edu",
+			"mobile":"7718951713",
+			"dob":"22-05-1998"
+		}	
+	]
+}
