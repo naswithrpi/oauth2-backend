@@ -53,10 +53,12 @@ public class AuthServerRepository {
 		return clientAuthModel;
 	}
 
-	public String login(LoginModel loginModel) {
+	public AuthCodeModel login(LoginModel loginModel) {
 		
 		JSONParser parser = new JSONParser();
 		Object obj = null;
+		
+		AuthCodeModel authCodeModel = new AuthCodeModel();
 		
 		Base64 base64 = new Base64();
 		String encodedUsername = new String(base64.encode(loginModel.getUsername().toString().getBytes()));
@@ -78,6 +80,7 @@ public class AuthServerRepository {
 						userID = userCred.get(KeyConstants.USER_ID).toString();
 						// System.out.println("userID in auth repo " + userID);
 						authCode = generateCode();
+						authCodeModel.setAuthCode(authCode);
 						break;
 					}
 				}
@@ -87,7 +90,7 @@ public class AuthServerRepository {
 			e.printStackTrace();
 		}
 		
-		return authCode;
+		return authCodeModel;
 	}
 
 	private String generateCode() {
@@ -101,15 +104,18 @@ public class AuthServerRepository {
 		
 	}
 
-	public String getAccessToken(String clientAuthCode) {
+	public AccessTokenModel getAccessToken(String clientAuthCode) {
 		
 		accessToken = "";
+		AccessTokenModel accessTokenModel = new AccessTokenModel();
+		
 		// System.out.println(clientAuthCode + " " + authCode);
 		if(clientAuthCode.equals(authCode)) {
 			accessToken = generateCode();
+			accessTokenModel.setAccessToken(accessToken);
 		}
 		
-		return accessToken;
+		return accessTokenModel;
 	}
 
 }

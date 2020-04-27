@@ -4,6 +4,7 @@
 package com.nasrpi.authenticationserver;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -14,6 +15,8 @@ import io.swagger.annotations.Api;
 /**
  * @author grandolf49
  */
+
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
 @Api
 @RequestMapping
@@ -27,12 +30,12 @@ public class AuthServerController {
 	}
 	
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
-	public String login(@RequestBody LoginModel loginModel) {
+	public AuthCodeModel login(@RequestBody LoginModel loginModel) {
 		return authServerRepository.login(loginModel);
 	}
 	
 	@RequestMapping(value = "/getAccessToken", method = RequestMethod.POST)
-	public String getAccessToken(@RequestBody String authCode) {
+	public AccessTokenModel getAccessToken(@RequestBody String authCode) {
 		return authServerRepository.getAccessToken(authCode);
 	}
 }
