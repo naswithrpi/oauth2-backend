@@ -21,4 +21,6 @@ public class ClientAuthModel {
 	private String clientID;
 	
 	private String redirectionURL;
+	
+	private String scope;
 }
