@@ -9,8 +9,7 @@ package com.nasrpi.authenticationserver;
  */
 public class AuthConstants {
 
-	public static final String REDIRECTION_URL = "web page url"; //change to client web app login url
-	
+
 	public static final String CLIENT_DETAILS = "client_details";
 	public static final String CLIENT_DETAILS_JSON = "\\ClientDetails.json";
 	
